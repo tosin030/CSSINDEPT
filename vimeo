@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Video Hosting</title>
+    <style>
+        .div {
+            display: flex;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: gray;
+        }
+        
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        /* h2 {
+            background: url(https://i.vimeocdn.com/custom_asset/a6c6b61ec4c7f4d50f15f9913ba1b7df?q=80) no-repeat center center/cover;
+            height: 80vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            text-align: center;
+            padding: 0 20px;
+        }
+         */
+        
+        .hero {
+            background: url(https://i.vimeocdn.com/custom_asset/889254cc9690b811ca73b0435c77bf5e?q=80) no-repeat center center/cover;
+            height: 80vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            margin: 1rem;
+            width: 25rem;
+            text-align: left;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+        
+        .hero button {
+            background: #00c4e6;
+            color: #fff;
+            padding: 1.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            width: 12rem;
+            box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-list {
+            text-align: left;
+            background-color: #000 !important;
+            color: #fff;
+        }
+        /* .features div {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            background-color: #fff;
+        } */
+        /* .features {
+            text-align: left;
+            background-color: #000 !important;
+            color: #fff;
+        } */
+        
+        .features {
+            padding-right: 2px;
+            padding-left: 2px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: #f9f9f92f;
+            /* Optional styling for the section */
+        }
+        
+        .cta {
+            padding: 2em 20px;
+            text-align: center;
+        }
+        
+        .features h2,
+        .cta h2 {
+            margin-bottom: 1em;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5em;
+        }
+        
+        .feature {
+            padding: 1em;
+            border-radius: 5px;
+        }
+        
+        .keep-all {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .keep-all img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .show-tell {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .show-tell img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            /* x-offset, y-offset, blur-radius, color */
+        }
+        
+        .host-privately {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .host-privately img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .make-everyone {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .make-everyone img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .get-engagement {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .get-engagement img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .stream-securely {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .stream-securely img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .measure-impact {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .measure-impact img {
+            width: 28rem;
+            height: 25rem;
+            box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .shadow-text {
+            font-size: 2.5em;
+            /* Adjust font size as needed */
+            color: #4a4949ae;
+            text-shadow: 3px 3px 6px hwb(180 100% 0%);
+            /* x-offset, y-offset, blur-radius, color */
+        }
+        
+        .feature h3 {
+            margin-top: 0;
+        }
+        
+        .cta {
+            background: black;
+            color: #fff;
+        }
+        
+        .btn {
+            padding-top: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 8px;
+            border-radius: 20px;
+            width: 100px;
+            background-color: aqua;
+            box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+            transform-origin: 50% 12.5em;
+        }
+        
+        .cta button {
+            background: #fff;
+            color: #00dee6;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Vimeo</div>
+        <div class="logo">Product</div>
+        <div class="logo">Solutions</div>
+        <div class="logo">Learn</div>
+        <div class="logo">Pricing</div>
+        <div class="logo">Watch</div>
+
+        <nav>
+            <a href="#contactsales">Contact Sales</a>
+            <a href="#login">Login</a>
+            <a href="#join">Join</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+        <p>Education video solutions</p>
+        <nav>
+            <h1>Share knowledge with video</h1>
+            <p>Expand your reach beyond the classroom. Vimeo has the tools you need to connect with your community wherever they are.</p>
+            <div>
+                <button class="btn">JOIN FREE</button>
+                <button class="btn">Request a demo</button>
+                <!-- <button>Request a demo</button> -->
+            </div>
+
+
+
+    </section>
+
+
+    <section class="features" id="features">
+        <h2></h2>
+        <div class="feature-list">
+            <div class="feature show-tell">
+                <!-- <h3>Show and tell</h3> -->
+                <div>
+                    <h3>Show and tell</h3>
+                    <p>Prepare and present lessons, lectures and instructional content in the most engaging way possible. Vimeo Record lets you record your screen, webcam, or both, so you can deliver knowledge with a personal touch.
+                    </p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/a6c6b61ec4c7f4d50f15f9913ba1b7df?q=80" class="image-shadow" />
+
+            </div>
+            <div class="feature keep-all">
+                <div>
+                    <h3>Keep all your videos centralized</h3>
+                    <p>Store, manage, and host video lecturesand live streams in the highest quality possible - all in a secure, easy-to-search library for you and your audience.</p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/9da278a3070e75236a5ae9477bea0089?q=80" />
+            </div>
+            <div class="feature host-privately">
+                <div>
+                    <h3>Host classes publicly or privately</h3>
+                    <p>Embed your player on your site and set viewing permissions, password-protect your videos and live streams, or make them exclusive to your network. You can even replace videos without changing the URL.
+                    </p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/69bf419633f0b30387346586bd596ccc?q=80" />
+            </div>
+
+
+
+
+            <div class="features shadow-text">
+                <div>
+                    <h2 class="shadow-text">Viewership has grown 50% each year...It's connecting our alumni and families to our school in a way they were previously not able to stay engaged."
+                    </h2>
+                    <p class="shadow-text">Jason Kelly Athletic Director, Harvard-Westlake</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="feature make-everyone">
+                <div>
+                    <h3>Make it enjoyable for everyone</h3>
+                    <p>Vimeo enables educators to reach any audience, regardless of their cognitive, visual, or physical abilities. Our embeddable player works anywhere and complies with WCAG 2.0 AA and Section 508 standards for accessibility.</p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/1acda226abef07cf6b30857c8906de9e?q=80" />
+            </div>
+            <div class="feature get-engagement">
+                <div>
+                    <h3>Get better engagement</h3>
+                    <p>Make your video player interactive, even on mobile. Guide viewers with call-to-actions, video chaptering, or closed captions, and generate leads with email capture.</p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/839d6b9523124e7829431b2f614da217?q=80" />
+            </div>
+            <div class="feature stream-securely">
+                <div>
+                    <h3>Stream high-quality content securely</h3>
+                    <p>Whether it's you lecture, a new initiative, or just a message to students or faculty, broadcast events with reliable, crystal-clear live video to any viewer, anywhere.</p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/1515424cf08b2e6976b94a6dd0c2cd07?q=80" />
+            </div>
+            <div class="feature measure-impact">
+                <div>
+                    <h3>Measure the impact</h3>
+                    <p>Get real-time video analytics on how many people are watching, where and on what devices, so you can make your videos and live streams work better for your audience.</p>
+                </div>
+                <img src="https://i.vimeocdn.com/custom_asset/7a25a5ba1038c7cc7a8e52a389c8dcb4?q=80" />
+            </div>
+            <!-- <div class="feature">
+                <h3>Linking a global network of teachers</h3>
+                <p>Learn how Kansas State University helps reach, support, and educate student teachers around the world with weekly live-streamed shows.</p>
+            </div> -->
+        </div>
+    </section>
+    <section class="features" id="features">
+        <div>
+            <h2>Linking a global network of teachers</h2>
+            <p>Learn how Kansas State University helps reach, support, and educate student teachers around the world with weekly live-streamed shows</p>
+        </div>
+    </section>
+
+    <!-- 
+    <section class="cta" id="cta">
+        <h2>Jason Kelly Athletic Director, Harvard-Westlake</h2>
+        <p>Viewership has grown 50% each year...It's connecting our alumni and families to our school in a way they were previously not able to stay engaged."</p>
+
+
+    </section> -->
+
+
+
+
+
+
+    <section class="cta" id="cta">
+
+        <div>
+            <p>Video experience platform</p>
+            <h2>Everything you need to make, manage, and share brilliant videos</h2>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <p>&copy; 2024 Vimeo, Inc. All rights reserved.</p>
+        <p>Terms Privacy U.S. State Privacy Copyright Cookies</p>
+    </footer>
+
+</body>
+
+</html>
